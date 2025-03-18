@@ -35,5 +35,5 @@ jobs:
         run: rm -rf .pytest_cache
 
       - name: Run Tests
-        run: python -m pytest ./tests/
+        run: python -m pytest tests/ # Run pytest explicitly
 
