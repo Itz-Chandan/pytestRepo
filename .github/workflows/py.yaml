@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Clear Runner Cache
+        run: sudo rm -rf /opt/hostedtoolcache
       - name: Checkout Repository
         uses: actions/checkout@v3
 
