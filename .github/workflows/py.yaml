@@ -1,29 +1,30 @@
 name: python CI
 
 on:
-push:
-branches: [ main ]
-pull_request:
-branches: [ main ]
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-test:
-name: Run python Tests
-runs-on: ubuntu-latest
+  test:
+    name: Run python Tests
+    runs-on: ubuntu-latest
 
-steps:
-- name: Checkout Repository
-  uses: actions/checkout@v3
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-- name: Set up python
-  uses: actions/setup-python@v4
-with:
-    python-version: "3.10"
-- name: Install Dependencies
-run: |
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-pip install pytest # Ensure pytest is installed
+      - name: Set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
 
-- name: Run Tests
-run: python -m pytest tests/ # Run pytrst explicitlt
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest  # Ensure pytest is installed
+
+      - name: Run Tests
+        run: python -m pytest tests/  # Run pytest explicitly
