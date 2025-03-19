@@ -32,6 +32,6 @@ jobs:
           pip install pytest  # Ensure pytest is installed
 
       - name: Run Tests
-        run: python -m pytest tests/  # Change path if necessary
+        run: python -m pytest src/tests/  # Change path if necessary
 
 
