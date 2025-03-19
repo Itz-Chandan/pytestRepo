@@ -33,5 +33,5 @@ jobs:
 
       - name: Run Tests
         working-directory: ./src
-        run: python -m pytest tests/  # Update path if required
+        run: python -m pytest tests/  # Change to 'src/tests/' if necessary
 
